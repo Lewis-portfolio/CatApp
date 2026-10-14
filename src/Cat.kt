@@ -1,7 +1,14 @@
-class Cat (val name: String, var age: Int, var weight: Int) {
+class Cat (private val name: String, private var age: Int, var weightIn: Int) {
 
-    fun walk() {
-        weight--
+    var weight = weightIn
+        private set
+
+    fun walk(distance: Int) : Boolean {
+        if (weight - distance >= 5) {
+            weight -= distance
+            return true
+        }
+        return false
     }
 
     fun eat() {
