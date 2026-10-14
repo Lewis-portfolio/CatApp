@@ -11,8 +11,12 @@ class Cat (private val name: String, private var age: Int, var weightIn: Int) {
         return false
     }
 
-    fun eat() {
-        weight ++
+    fun eat() : Boolean {
+        if (weight <= 20) {
+            weight++
+            return true
+        }
+        return false
     }
 
     override fun toString() : String {
